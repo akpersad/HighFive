@@ -1,0 +1,2 @@
+module HighFiveHelper
+end

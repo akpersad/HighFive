@@ -1,0 +1,8 @@
+<h1>HighFive</h1>
+
+<%= form_tag("/high_five/lat_lng") do %>
+	<%= label_tag('zip', "Zipcode") %>
+	<%= text_field_tag('zip') %>
+
+	<%= submit_tag "Submit"%>
+<% end %>

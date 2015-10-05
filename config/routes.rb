@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  root to: 'high_five#welcome'
+
+  get 'high_five/view'
+
+  get 'high_five/favorite'
+
+  post 'high_five/lat_lng'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
