@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'instagram'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use SCSS for stylesheets
@@ -22,6 +22,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'pry'
 # for lat and long 
 gem 'geocoder'
+
+gem  'rest-client'
+
+gem 'json'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
