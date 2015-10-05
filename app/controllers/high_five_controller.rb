@@ -6,6 +6,7 @@ class HighFiveController < ApplicationController
 
   def lat_lng
   	lat_long = GeoLocation.new(params['zip'])
+  	binding.pry
   	redirect_to("/high_five/view")
   end
 
