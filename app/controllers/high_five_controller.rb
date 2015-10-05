@@ -1,4 +1,5 @@
 require_relative "../models/GeoLocation.rb" 
+require_relative "../models/instagram.rb" 
 
 class HighFiveController < ApplicationController
   def welcome
@@ -6,6 +7,7 @@ class HighFiveController < ApplicationController
 
   def lat_lng
   	lat_long = GeoLocation.new(params['zip'])
+    @insta = Instagram.new(lat_long.lat_long)
   	redirect_to("/high_five/view")
   end
 
