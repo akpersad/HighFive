@@ -3,18 +3,19 @@ require 'geocoder'
 
 # this app starts after user sends post request
 
-class GeoLocation
+class Geolocation
 
 	attr_reader :zip
 
 	def initialize(zip)
 		@zip = zip.to_s
+	end
 
+	def valid?
 		if !(/^\d{5}$/).match @zip
-			raise ZipCodeError 
+			return false 
 		end
-
-
+		true
 	end
 
 	def get_lat_long
@@ -31,9 +32,4 @@ class GeoLocation
 
 	
 
-end
-
-#if it raise error, redirect back to start page, if not continue from 
-class ZipCodeError < StandardError
-	puts "Please insert zip code"
 end

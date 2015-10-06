@@ -1,5 +1,7 @@
 <h1>HighFive</h1>
 
+<h3> <%= flash[:success].html_safe unless flash[:success].blank? %> </h3>
+
 <%= form_tag("/high_five/lat_lng") do %>
 	<%= label_tag('zip', "Zipcode") %>
 	<%= text_field_tag('zip') %>
