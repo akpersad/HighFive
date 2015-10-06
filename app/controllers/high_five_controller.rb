@@ -12,6 +12,7 @@ class HighFiveController < ApplicationController
       flash[:success] = "<b>Please Enter Valid Zip</b>"
       render("/high_five/welcome")
     else
+      
       lat_long = lat_long.lat_long << params["number"]
       @insta = Insta.new(lat_long).get_values
       render "/high_five/view"
