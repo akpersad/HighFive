@@ -1,5 +1,3 @@
-require 'pry'
-require 'JSON'
 require 'open-uri'
 
 class Insta
