@@ -25,6 +25,8 @@ gem 'geocoder'
 
 gem  'rest-client'
 
+gem 'oauth'
+
 gem 'json'
 # parse through json data
 

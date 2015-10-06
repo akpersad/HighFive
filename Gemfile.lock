@@ -153,6 +153,7 @@ GEM
     notiffany (0.0.8)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    oauth (0.4.7)
     pg (0.18.3)
     pry (0.10.2)
       coderay (~> 1.1.0)
@@ -307,6 +308,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   json
+  oauth
   pg
   pry
   rails (= 4.2.0)
