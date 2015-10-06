@@ -12,8 +12,10 @@ class HighFiveController < ApplicationController
       flash[:success] = "<b>Please Enter Valid Zip</b>"
       render("/high_five/welcome")
     else
-      # @yelper = Yelper.new(lat_long.lat_long).returning
-      @insta = Insta.new(lat_long.lat_long).get_values
+      lat_long = lat_long.lat_long << params["number"]
+      @yelper = Yelp.new(lat_long).returning
+      @insta = Insta.new(lat_long).get_values
+
       render "/high_five/view"
     end
   end
@@ -21,7 +23,6 @@ class HighFiveController < ApplicationController
   def view
     #if we go to /view it renders this .. when app is deployed wont this just be canlced? or issue 404
     @insta = {1=>2,3=>4,5=>6}
-    @yelper
   end
 
   def favorite

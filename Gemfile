@@ -19,14 +19,19 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 #pry
-gem 'pry'
+# gem 'pry'
 # for lat and long 
 gem 'geocoder'
 
 gem  'rest-client'
 
+gem 'oauth'
+
 gem 'json'
 # parse through json data
+
+gem 'twitter'
+# twitter api
 
 gem 'require_all'
 

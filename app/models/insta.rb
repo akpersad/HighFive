@@ -7,7 +7,6 @@ class Insta
 
 	def initialize(array)	
 		@lat_long = array
-
 	end
 		
 	def get_values	
@@ -34,7 +33,7 @@ class Insta
 			end
 		end
 
-		while int < 5
+		while int < lat_long[2].to_i
 		key = new_hash.keys[int]
 		value = new_hash.values[int]
 			new_hash1[key] = value

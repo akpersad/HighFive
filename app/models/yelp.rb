@@ -3,7 +3,7 @@ require 'oauth'
 require 'pry'
 require 'json'
 
-class Yelper
+class Yelp
 	def initialize(array)
 		@array = array
 	end
@@ -29,7 +29,7 @@ class Yelper
 		restaurants = {} 
 		get_values
 		i = 0
-		while i < @array[2]
+		while i < @array[2].to_i
 			restaurants[@yelp_data["businesses"][i]["name"]] = [@yelp_data["businesses"][i]["rating_img_url_large"], @yelp_data["businesses"][i]["review_count"], @yelp_data["businesses"][i]["image_url"], @yelp_data["businesses"][i]["url"]]
 			i += 1
 		end
@@ -37,6 +37,4 @@ class Yelper
 	end
 end
 
-x = Yelper.new([40.732689,-73.784866, 2])
-x.returning
 

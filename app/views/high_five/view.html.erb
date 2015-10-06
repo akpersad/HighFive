@@ -1,6 +1,13 @@
 <h1>HighFive#view</h1>
-<p>Find me in app/views/high_five/view.html.erb</p>
+
 <% @insta.each do |thumbnail, insta_prof|%>
 <a href="<%= insta_prof %>" target="_blank"><img src="<%= thumbnail %>" ></a>
 <br>
+<% end %>
+
+<% @yelper.each do |name, info| %>
+	<%= name %><br>
+	<% info.each do |e|%>
+		<a href="<%= e[0] %>"
+	<% end %>
 <% end %>
