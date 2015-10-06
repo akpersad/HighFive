@@ -26,6 +26,7 @@ gem 'geocoder'
 gem  'rest-client'
 
 gem 'json'
+# parse through json data
 
 gem 'require_all'
 
