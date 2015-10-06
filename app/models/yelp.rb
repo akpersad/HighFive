@@ -26,15 +26,21 @@ class Yelp
 	end
 
 	def returning
-		restaurants = {} 
+		rest = [] 
 		get_values
 		i = 0
 		while i < @array[2].to_i
-			restaurants[@yelp_data["businesses"][i]["name"]] = [@yelp_data["businesses"][i]["rating_img_url_large"], @yelp_data["businesses"][i]["review_count"], @yelp_data["businesses"][i]["image_url"], @yelp_data["businesses"][i]["url"]]
+			rest.push(
+				@yelp_data["businesses"][i]["name"], 
+				@yelp_data["businesses"][i]["rating"],
+				@yelp_data["businesses"][i]["rating_img_url_small"],
+				@yelp_data["businesses"][i]["url"],
+				@yelp_data["businesses"][i]["image_url"])
 			i += 1
 		end
-		restaurants
+		rest
 	end
 end
 
-
+# array = [40.732689, -73.784866, 5]
+# a = Yelp.new(array).returning
