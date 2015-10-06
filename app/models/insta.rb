@@ -7,8 +7,6 @@ class Insta
 
 	def initialize(array)	
 		@lat_long = array
-		# binding.pry
-
 	end
 		
 	def get_values	
