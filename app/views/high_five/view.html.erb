@@ -1,6 +1,6 @@
 <h1>HighFive#view</h1>
 <p>Find me in app/views/high_five/view.html.erb</p>
-<% @insta.keys.each do |pic|%>
-<img src="<%= pic %>" >
+<% @insta.each do |thumbnail, insta_prof|%>
+<a href="<%= insta_prof %>" target="_blank"><img src="<%= thumbnail %>" ></a>
 <br>
 <% end %>
