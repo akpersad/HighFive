@@ -1,5 +1,18 @@
 <h1>HighFive#view</h1>
 
+<h3> <%= flash[:success].html_safe unless flash[:success].blank? %> </h3>
+
+<%= form_tag("/high_five/lat_lng") do %>
+	<%= label_tag('zip', "Zipcode") %>
+	<%= text_field_tag('zip') %>
+	</br>
+	<input type="radio" name="number" value="5">5<br>
+	<input type="radio" name="number" value="10">10<br>
+	<input type="radio" name="number" value="20">20<br>
+
+	<%= submit_tag "Submit"%>
+<% end %>
+
 <% @insta.each do |thumbnail, insta_prof|%>
 	<a href="<%= insta_prof %>" target="_blank"><img src="<%= thumbnail %>" ></a>
 <br>
