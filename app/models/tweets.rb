@@ -18,7 +18,6 @@ class Tweets
 
 
 	def search_results
-		# binding.pry
 		results = Array.new
 		TWITTER.search(string).each do |tweet|
 			if results.length < num

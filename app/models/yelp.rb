@@ -17,7 +17,6 @@ class Yelp
 		api_host = 'api.yelp.com'
 
 		@food_path = "/v2/search?term=food&ll=#{@array[0]},#{@array[1]}&limit=#{@array[2]}"
-		# @bar_path = "/v2/search?term=bar&ll=40.732689,-73.784866&"
 
 		consumer = OAuth::Consumer.new(consumer_key, consumer_secret, {:site => "http://#{api_host}"})
 		access_token = OAuth::AccessToken.new(consumer, token, token_secret)
@@ -41,6 +40,3 @@ class Yelp
 		rest
 	end
 end
-
-# array = [40.732689, -73.784866, 5]
-# a = Yelp.new(array).returning
