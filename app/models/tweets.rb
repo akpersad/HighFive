@@ -2,10 +2,11 @@ require "twitter"
 require "open-uri"
 require "pry"
 class Tweets
-	attr_reader :string
+	attr_reader :string, :num
 
-	def initialize(string)	
+	def initialize(string,num)
 		@string = string
+		@num = num.to_i
 	end
 
 	TWITTER = Twitter::REST::Client.new do |config|
@@ -17,9 +18,10 @@ class Tweets
 
 
 	def search_results
+		# binding.pry
 		results = Array.new
 		TWITTER.search(string).each do |tweet|
-			if results.length < 5
+			if results.length < num
 				results << tweet
 			else
 				break
@@ -29,28 +31,6 @@ class Tweets
 	end
 
 	def results
-		results ||= search_results
+		array ||= search_results
 	end
-
-	<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Have a High Five <a href="https://t.co/ce0TFlAcy5">https://t.co/ce0TFlAcy5</a></p>&mdash;  <a href="https://twitter.com/codeschool/status/651464468233236480">October 2, 2015</a></blockquote>
-	<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
-	<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Have a High Five <a href="https://t.co/ce0TFlAcy5">https://t.co/ce0TFlAcy5</a></p>&mdash;  <a href="https://twitter.com/codeschool/status/651464468233236480">October 2, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-	# def get_tweets
-	# 	# binding.pry
-	# 	results.each do |indiv_tweet|
-	# 		indiv_tweet.id
-	# 	end
-	# end
-
-	@url = "https://twitter.com/statuses/651469730931437568#{id}"
-
-
 end
-
-a = Tweets.new("Brooklyn, New York City")
-a.results
-binding.pry

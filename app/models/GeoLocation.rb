@@ -26,6 +26,20 @@ class Geolocation
 		location
 	end
 
+	def get_address
+		address = Array.new
+		data = Geocoder.search(lat_long)
+		address << data[0].data["address_components"][3]["long_name"]
+		address << data[0].data["address_components"][5]["long_name"]
+		# binding.pry
+		address.join(", ")
+
+	end
+
+	def address
+		address ||= get_address
+	end
+
 	def lat_long
 		lat_long ||= get_lat_long
 	end

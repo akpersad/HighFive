@@ -17,3 +17,12 @@
 		<%= stuff %><br>
 	<% end %>
 <% end %>
+
+
+<% @twitter.each do |tweet| %>
+	
+	<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Have a High Five <a href="https://t.co/ce0TFlAcy5">https://t.co/ce0TFlAcy5</a></p>&mdash;  <a href="https://twitter.com/codeschool/status/<%=tweet.id%>">October 2, 2015</a></blockquote>
+	<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<%end%>
