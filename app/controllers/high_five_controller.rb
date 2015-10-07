@@ -5,29 +5,36 @@ class HighFiveController < ApplicationController
   end
 
   def lat_lng
-    # need to make a valid class to make sure params valid to_i temp solution
-    
+
+
     if Valid.new(params['zip']).is_zip?
+      session['params'] = [params['zip'],params['number']]
       Zipcode.create(:zipcode => params['zip'],:number_to_return => params['number'])
       redirect_to("/high_five/view")
     else
       flash[:success] = "<b>Please Enter Valid Zip</b>"
       render("/high_five/welcome")
     end
+
   end
 
   def view
-    data = Zipcode.order("created_at").last
 
-    @lat_long = Geolocation.new(data.zipcode)
-    address = @lat_long.address
-    latlong = @lat_long.lat_long << data.number_to_return
-    @restaurant_yelper = Yelp.new(latlong).restaurant_yelp
-    @bar_yelper = Yelp.new(latlong).bar_yelp
-    @insta = Insta.new(latlong).get_values
-    @twitter = Tweets.new(address,data.number_to_return).results
+    session['init'] = true
 
-    render "/high_five/view"
+    if !session['params'].nil?
+      @lat_long = Geolocation.new(session['params'][0])
+      address = @lat_long.address
+      latlong = @lat_long.lat_long << session['params'][1]
+      @restaurant_yelper = Yelp.new(latlong).restaurant_yelp
+      @bar_yelper = Yelp.new(latlong).bar_yelp
+      @insta = Insta.new(latlong).runner
+      @twitter = Tweets.new(address,session['params'][1]).results
+      render "/high_five/view"
+    else
+      redirect_to ("/")
+    end
+
   end
 
   def favorite
