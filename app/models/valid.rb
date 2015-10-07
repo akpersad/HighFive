@@ -6,7 +6,6 @@ class Valid
 
 	def initialize(input)	
 		@input = input
-		binding.pry
 	end
 
 	def valid?
