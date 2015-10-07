@@ -18,8 +18,20 @@
 <br>
 <% end %>
 <br>
-
-<% @yelper.each do |stuff| %>
+<h3>Restaurants</h3>
+<% @restaurant_yelper.each do |stuff| %>
+	<% if stuff.to_s.match(/(yelp.com)/)%>
+			<% @url = stuff %>
+	<% elsif stuff.to_s.match(/(jpg)$/) %>
+		<a href="<%= @url%>" target="_blank"><img src="<%= stuff %>"><br></a>
+	<% elsif stuff.to_s.match(/(png)$/) %>
+		<img src="<%= stuff %>"><br></a>
+	<% else %>
+		<%= stuff %><br>
+	<% end %>
+<% end %>
+<h3>Bars</h3>
+<% @bar_yelper.each do |stuff| %>
 	<% if stuff.to_s.match(/(yelp.com)/)%>
 			<% @url = stuff %>
 	<% elsif stuff.to_s.match(/(jpg)$/) %>

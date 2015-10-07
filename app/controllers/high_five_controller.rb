@@ -15,7 +15,8 @@ class HighFiveController < ApplicationController
     else
       address = lat_long.address
       latlong = lat_long.lat_long << params["number"]
-      @yelper = Yelp.new(latlong).returning
+      @restaurant_yelper = Yelp.new(latlong).restaurant_yelp
+      @bar_yelper = Yelp.new(latlong).bar_yelp
       @insta = Insta.new(latlong).get_values
       @twitter = Tweets.new(address,params["number"]).results
 
