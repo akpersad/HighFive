@@ -14,6 +14,7 @@
 		<%= submit_tag "Submit"%>
 
 		<% x = [] %>
+
 		<% Zipcode.all.each {|e| x << e.zipcode} %>
 		<% x.uniq! %>
 		<button style="background-color:red" name="zip" type="submit" value="<%=x.sample%>">Random Zipcode</button>
