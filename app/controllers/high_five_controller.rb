@@ -5,9 +5,9 @@ class HighFiveController < ApplicationController
   end
 
   def lat_lng
+    Zipcode.create(:zipcode => params['zip'])
     
   	lat_long = Geolocation.new(params['zip'])
-    # binding.pry
 
     if !lat_long.valid?
       flash[:success] = "<b>Please Enter Valid Zip</b>"
@@ -24,8 +24,6 @@ class HighFiveController < ApplicationController
   end
 
   def view
-    #if we go to /view it renders this .. when app is deployed wont this just be canlced? or issue 404
-    @insta = {1=>2,3=>4,5=>6}
   end
 
   def favorite
