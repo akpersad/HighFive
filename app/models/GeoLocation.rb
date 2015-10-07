@@ -20,7 +20,7 @@ class Geolocation
 
 	def get_lat_long
 		location = []
-		location_data = Geocoder.search(zip.to_i)
+		location_data = Geocoder.search(zip)
 		location << location_data[0].data["geometry"]["location"]['lat']
 		location << location_data[0].data["geometry"]["location"]['lng']
 		location

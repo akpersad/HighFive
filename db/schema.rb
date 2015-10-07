@@ -15,8 +15,9 @@ ActiveRecord::Schema.define(version: 20151007134503) do
 
   create_table "zipcodes", force: :cascade do |t|
     t.integer  "zipcode"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "number_to_return"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
 end
