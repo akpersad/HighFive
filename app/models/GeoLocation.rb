@@ -11,13 +11,6 @@ class Geolocation
 		@zip = zip.to_s
 	end
 
-	def valid?
-		if !(/^\d{5}$/).match @zip
-			return false 
-		end
-		true
-	end
-
 	def get_lat_long
 		location = []
 		location_data = Geocoder.search(zip)
