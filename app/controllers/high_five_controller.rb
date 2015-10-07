@@ -6,7 +6,7 @@ class HighFiveController < ApplicationController
 
   def lat_lng
     # need to make a valid class to make sure params valid to_i temp solution
-    binding.pry
+    
     if Valid.new(params['zip']).is_zip?
       Zipcode.create(:zipcode => params['zip'],:number_to_return => params['number'])
       redirect_to("/high_five/view")
