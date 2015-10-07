@@ -1,14 +1,22 @@
-<h1>HighFive</h1>
+<center>
+	<h1>HighFive!</h1>
 
-<h3> <%= flash[:success].html_safe unless flash[:success].blank? %> </h3>
+	<h3> <%= flash[:success].html_safe unless flash[:success].blank? %> </h3>
 
-<%= form_tag("/high_five/lat_lng") do %>
-	<%= label_tag('zip', "Zipcode") %>
-	<%= text_field_tag('zip') %>
-	</br>
-	<input type="radio" name="number" value="5" checked="checked">5<br>
-	<input type="radio" name="number" value="10">10<br>
-	<input type="radio" name="number" value="20">20<br>
+	<%= form_tag("/high_five/lat_lng") do %>
+		<%= label_tag('zip', "Zipcode") %>
+		<%= text_field_tag('zip') %>
+		</br>
+		<input type="radio" name="number" value="5" checked="checked">5<br>
+		<input type="radio" name="number" value="10">10<br>
+		<input type="radio" name="number" value="20">20<br><br>
 
-	<%= submit_tag "Submit"%>
-<% end %>
+		<%= submit_tag "Submit"%>
+
+		<% x = [] %>
+		<% Zipcode.all.each {|e| x << e.zipcode} %>
+		<% x.uniq! %>
+		<button style="background-color:red" name="zip" type="submit" value="<%=x.sample%>">Random Zipcode</button>
+
+	<% end %>
+</center>
