@@ -23,6 +23,7 @@ class HighFiveController < ApplicationController
     session['init'] = true
 
     if !session['params'].nil?
+      # binding.pry
       @lat_long = Geolocation.new(session['params'][0])
       address = @lat_long.address
       latlong = @lat_long.lat_long << session['params'][1]
