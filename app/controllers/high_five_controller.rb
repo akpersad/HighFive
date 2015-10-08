@@ -4,7 +4,6 @@ class HighFiveController < ApplicationController
 
   def lat_lng
 
-
     if Valid.new(params['zip']).is_zip?
       session['params'] = [params['zip'],params['number']]
       Zipcode.create(:zipcode => params['zip'],:number_to_return => params['number'])
