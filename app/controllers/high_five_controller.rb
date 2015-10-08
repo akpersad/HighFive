@@ -6,13 +6,12 @@ class HighFiveController < ApplicationController
 
   def lat_lng
 
-
     if Valid.new(params['zip']).is_zip?
       session['params'] = [params['zip'],params['number']]
       Zipcode.create(:zipcode => params['zip'],:number_to_return => params['number'])
       redirect_to("/high_five/view")
     else
-      flash[:success] = "<b>Please Enter Valid Zip</b>"
+      flash[:invalid] = "<b>Please Enter Valid Zip</b>"
       render("/high_five/welcome")
     end
 
@@ -23,7 +22,7 @@ class HighFiveController < ApplicationController
     session['init'] = true
 
     if !session['params'].nil?
-      # binding.pry
+      
       @lat_long = Geolocation.new(session['params'][0])
       address = @lat_long.address
       latlong = @lat_long.lat_long << session['params'][1]
