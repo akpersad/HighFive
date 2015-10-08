@@ -16,8 +16,11 @@ class Valid
 	end
 
 	def is_zip?
-		if input.to_region && valid?
-			return true
+		
+		if valid?
+			if input.to_region
+				return true
+			end
 		end
 		false
 	end
