@@ -32,13 +32,15 @@ class Insta
 		insta_hash ||= json_parse
 	end
 
+	#not times do but change to while loop should fix :)
+
 	def insta_builder
 		final_hash = Hash.new
-		lat_long[2].to_i.times do
-			insta_hash['data'].each do |sections|
+			insta_hash['data'].each_with_index do |sections,index|
+				if index < lat_long[2].to_i
 				final_hash[sections['images']['low_resolution']['url'].to_s] = sections['link'].to_s
+				end
 			end
-		end
 		final_hash
 	end
 

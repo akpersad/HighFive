@@ -1,8 +1,6 @@
 require 'pry'
 require 'geocoder'
 
-# this app starts after user sends post request
-
 class Geolocation
 
 	attr_reader :zip
