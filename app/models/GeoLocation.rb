@@ -1,5 +1,6 @@
 require 'pry'
 require 'geocoder'
+require 'area'
 
 class Geolocation
 
@@ -10,20 +11,12 @@ class Geolocation
 	end
 
 	def get_lat_long
-		location = []
-		location_data = Geocoder.search(zip)
-		location << location_data[0].data["geometry"]["location"]['lat']
-		location << location_data[0].data["geometry"]["location"]['lng']
-		location
+		zip.to_latlon.split(",").collect {|x| x.to_f}
 	end
 
 	def get_address
-		address = Array.new
-		data = Geocoder.search(lat_long)
-		address << data[0].data["address_components"][3]["long_name"]
-		address << data[0].data["address_components"][5]["long_name"]
-		address.join(", ")
-
+		
+		zip.to_region
 	end
 
 	def address
@@ -33,7 +26,4 @@ class Geolocation
 	def lat_long
 		lat_long ||= get_lat_long
 	end
-
-	
-
 end
