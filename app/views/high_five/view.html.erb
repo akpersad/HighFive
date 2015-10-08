@@ -21,18 +21,16 @@
 	<% end %>
 </center>
 
-<ul class='tabs'>
-  <li data-sec='insta'>Instagram</li>
-  <li data-sec='yelp'>Yelp</li>
-  <li data-sec='twitter'>Twitter</li>
+<ul class="tabs">
+  <li data-sec='insta'><img src="http://www.boosharticles.com/wp-content/uploads/2015/06/instagram-logo-vector-image.png" height="40" width="60"></li>
+  <li data-sec='yelp'><img src="http://www.pizzaboccalupo.com/images/YelpIcon.png" height="50" width="50"></li>
+  <li data-sec='twitter'><img src="http://vectorlogos.org/files/images/twitter-square-icon-2010.png" height="50" width="50"></li>
+    <li class="bg"></li>
 </ul>
 
+
 <div class="view">
-
-</div>
-
-<div class="hidden">
-	<div class="insta">
+	<div class="insta hidden">
 
 		<% @insta.each do |thumbnail, insta_prof|%>
 			<a href="<%= insta_prof %>" target="_blank"><img src="<%= thumbnail %>" ></a>
@@ -41,7 +39,7 @@
 	
 	</div>
 
-	<div class="yelp">
+	<div class="yelp hidden">
 
 		<h3>Restaurants</h3>
 		<% @restaurant_yelper.each do |stuff| %>
@@ -70,7 +68,7 @@
 
 	</div>
 
-	<div class="twitter">
+	<div class="twitter hidden">
 
 		<% @twitter.each do |tweet| %>
 			<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Have a High Five <a href="https://t.co/ce0TFlAcy5">https://t.co/ce0TFlAcy5</a></p>&mdash;  <a href="https://twitter.com/codeschool/status/<%=tweet.id%>">October 2, 2015</a></blockquote>
@@ -83,6 +81,6 @@
 <script>
 $('.tabs li').click(function(){
     var c = $(this).attr('data-sec');
-    $('.view').empty().html($(".hidden ."+c).html());
+    $('.view .' + c).removeClass('hidden').siblings().addClass('hidden');
 });
 </script>

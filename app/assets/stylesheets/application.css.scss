@@ -37,8 +37,7 @@ body {
 
 .tabs li {
   display: inline-block;
-  padding: 30px;
-  border: 1px solid;
+  padding: 100px;
 }
 
 .hidden {
@@ -47,4 +46,89 @@ body {
 .view {
   border: 1px solid;
   height: 400px;
+}
+
+@font-face {
+  font-family: 'HeydingsCommonIconsRegular';
+  src: url('http://ianfarb.com/random/heydings_icons-webfont.eot');
+  src: url('http://ianfarb.com/random/heydings_icons-webfont.eot?#iefix') format('embedded-opentype'), url('http://ianfarb.com/random/heydings_icons-webfont.woff') format('woff'), url('http://ianfarb.com/random/heydings_icons-webfont.ttf') format('truetype'), url('http://ianfarb.com/random/heydings_icons-webfont.svg#HeydingsCommonIconsRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #e5e5e5;
+}
+
+.bg {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: .25s;
+  pointer-events: none;
+}
+
+li {
+  list-style: none;
+}
+
+li a {
+  display: block;
+  float: left;
+  width: 20%;
+  padding: 25px 0;
+  text-align: center;
+  font-family: 'HeydingsCommonIconsRegular', Helvetida Neue, sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 40px;
+  color: #fff;
+  background: #ccc;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, .25);
+  transition: .25s;
+}
+
+li a:hover {
+  margin: -10px 0 0 0;
+}
+
+.tabs {
+  width: 2000px;
+  margin: 0px auto 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tabs li:first-child a {
+  background: #8F4700 !important;
+}
+
+.tabs li:nth-child(2) a {
+  background: #009999 !important;
+}
+
+.tabs li:nth-child(3) a {
+  background: #6dffb9 !important;
+}
+
+.tabs li:first-child:hover ~ .bg {
+  background: #CC6600;
+}
+
+.tabs li:nth-child(2):hover ~ .bg {
+  background: #00FFFF;
+}
+
+.tabs li:nth-child(3):hover ~ .bg {
+  background: #6dffb9;
 }
