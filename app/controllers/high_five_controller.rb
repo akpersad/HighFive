@@ -1,5 +1,3 @@
-Dir[File.dirname(__FILE__) + '../models/*.rb'].each {|file| require file }
-
 class HighFiveController < ApplicationController
   def welcome
   end
@@ -8,7 +6,9 @@ class HighFiveController < ApplicationController
 
     if Valid.new(params['zip']).is_zip?
       session['params'] = [params['zip'],params['number']]
+      # slow
       Zipcode.create(:zipcode => params['zip'],:number_to_return => params['number'])
+      # slow
       redirect_to("/high_five/view")
     else
       flash[:invalid] = "<b>Please Enter Valid Zip</b>"

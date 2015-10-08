@@ -1,30 +1,18 @@
-require 'pry'
-require 'geocoder'
-
 class Geolocation
 
-	attr_reader :zip
+attr_reader :zip
 
 	def initialize(zip)
 		@zip = zip.to_s
 	end
 
 	def get_lat_long
-		location = []
-		sleep(1)
-		location_data = Geocoder.search(zip)
-		location << location_data[0].data["geometry"]["location"]['lat']
-		location << location_data[0].data["geometry"]["location"]['lng']
-		location
+		zip.to_latlon.split(",").collect {|x| x.to_f}
 	end
 
 	def get_address
-		address = Array.new
-		data = Geocoder.search(lat_long)
-		address << data[0].data["address_components"][3]["long_name"]
-		address << data[0].data["address_components"][5]["long_name"]
-		address.join(", ")
-
+		binding.pry
+		zip.to_region
 	end
 
 	def address
