@@ -2,7 +2,7 @@ class HighFiveController < ApplicationController
   def welcome
   end
 
-  def lat_lng
+  def results
     if Valid.new(params['zip']).is_zip?
         @lat_long = Geolocation.new(params['zip'])
         address = @lat_long.address

@@ -5,7 +5,7 @@
 	<h3> <span><%= @lat_long.address %></span> </h3>
 	
 	<h3> <%= flash[:success].html_safe unless flash[:success].blank? %> </h3>
-	<%= form_tag("/high_five/lat_lng") do %>
+	<%= form_tag("/high_five/results") do %>
 		<%= label_tag('zip', "Zipcode") %>
 		<%= text_field_tag('zip') %>
 		<p>

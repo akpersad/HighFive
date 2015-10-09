@@ -12,7 +12,7 @@
 </h1>
 <h3> <span>FLATIRON SCHOOL</span> </h3>
 	<h3> <%= flash[:success].html_safe unless flash[:success].blank? %> </h3>
-	<%= form_tag("/high_five/lat_lng")  do %>
+	<%= form_tag("/high_five/results")  do %>
 		
 		<br>
 		<br>
@@ -31,3 +31,6 @@
 		<button class='butt'name="zip" type="submit" value="<%=x.sample%>"><h5>FEELING LUCKY?</h5></button>
 	<% end %>
 </center>
+
+
+<center> 하이 파이브 </center>
