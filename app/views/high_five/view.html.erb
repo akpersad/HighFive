@@ -8,11 +8,12 @@
 	<%= form_tag("/high_five/lat_lng") do %>
 		<%= label_tag('zip', "Zipcode") %>
 		<%= text_field_tag('zip') %>
-		</br>
-		<input type="radio" name="number" value="5" checked="checked">5
-		<input type="radio" name="number" value="10">10
-		<input type="radio" name="number" value="20">20
-		<br>
+		<p>
+			Show:
+			<input type="radio" name="number" value="5" checked="checked">5
+			<input type="radio" name="number" value="10">10
+			<input type="radio" name="number" value="20">20
+		</p>
 		<%= submit_tag "Submit"%>
 		<% x = [] %>
 		<% Zipcode.all.each {|e| x << e.zipcode} %>
