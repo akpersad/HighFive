@@ -1,24 +1,27 @@
 class HighFiveController < ApplicationController
   def welcome
   end
+
   def lat_lng
     if Valid.new(params['zip']).is_zip?
-      
-        @lat_long = Geolocation.new(session['params'][0])
+        @lat_long = Geolocation.new(params['zip'])
         address = @lat_long.address
-        latlong = @lat_long.lat_long << session['params'][1]
+        latlong = @lat_long.lat_long << params['number']
         @restaurant_yelper = Yelp.new(latlong).restaurant_yelp
         @insta = Insta.new(latlong).runner
-        @twitter = Tweets.new(address,session['params'][1]).results
+        @twitter = Tweets.new(address,params['number']).results
         render "/high_five/view"
+        Zipcode.create(:zipcode => params['zip'] )
     else
       flash[:success] = "<b>Please Enter Valid Zip</b>"
-      render("/high_five/welcome")
+      redirect_to ("/")
     end
   end
+
   def view
       redirect_to ("/")
   end
+
   def favorite
   end
 end

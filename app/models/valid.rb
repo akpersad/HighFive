@@ -7,6 +7,13 @@ class Valid
 		@input = input
 	end
 
+	def stringfull?
+		if input == ''
+			return false
+		end
+		true
+	end
+
 	def valid?
 		
 		if !(/^\d{5}$/).match input
@@ -16,9 +23,11 @@ class Valid
 	end
 
 	def is_zip?	
-		if valid?
-			if input.to_region
-				return true
+		if stringfull?
+			if valid?
+				if input.to_region
+					return true
+				end
 			end
 		end
 		false
