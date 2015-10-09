@@ -1,6 +1,5 @@
 require "twitter"
 require "open-uri"
-require "pry"
 class Tweets
 	attr_reader :string, :num
 

@@ -1,6 +1,5 @@
 require 'rubygems'
 require 'oauth'
-require 'pry'
 require 'json'
 
 class Yelp
