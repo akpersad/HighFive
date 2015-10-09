@@ -3,6 +3,7 @@ class HighFiveController < ApplicationController
   end
   def lat_lng
     if Valid.new(params['zip']).is_zip?
+      
         @lat_long = Geolocation.new(session['params'][0])
         address = @lat_long.address
         latlong = @lat_long.lat_long << session['params'][1]
