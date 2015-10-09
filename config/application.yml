@@ -1,0 +1,23 @@
+# Add configuration values here, as shown below.
+#
+# pusher_app_id: "2954"
+# pusher_key: 7381a978f7dd7f9a1117
+# pusher_secret: abdc3b896a0ffb85d373
+# stripe_api_key: sk_test_2J0l093xOyW72XUYJHE4Dv2r
+# stripe_publishable_key: pk_test_ro9jV5SNwGb1yYlQfzG17LHK
+#
+# production:
+#   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
+#   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+#instagram keys
+insta_access: "328328693.820ad4a.e7188df1eb914a3d825d3055fee849bf"
+#twitter
+consumer_key: "suECsPzsMM7V3GoNnIaXXE4hY"
+consumer_secret: "NoA8RS9o8kpdZiIwtVtQi2RHJIv6idKrTNy8Yv7Wp0H76CPa2S"
+access_token: "36609245-osCJiHheIlZ6js2JVjQU5IyeXjUmFuDmpkglxpPbB"
+access_token_secret: "RljESz8ssq5owjeveAITWmRNEhkdwDSycyKEyqljcqZkY"
+#yelp keys
+yelp_c_k: "h-PhZkg6N-RV08KQAoHbkQ"
+yelp_c_s: "6NIvfs6CW2KPTxjRzjna42LkYBc"
+yelp_t: "M9_KEOzf5dG3i-GDO0WDGSqbeQ92aMwo"
+yelp_t_s: "aQoGM4JPP-PgQj6k-33tgs99eIU"
