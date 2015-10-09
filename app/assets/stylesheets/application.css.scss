@@ -34,3 +34,226 @@ body {
 .theme-showcase > p > .btn {
   margin: 5px 0;
 }
+
+
+
+
+@-webkit-keyframes scale {
+  0% {
+    -webkit-transform: scaleY(0);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+  }
+}
+@-moz-keyframes scale {
+  0% {
+    -moz-transform: scaleY(0);
+  }
+  100% {
+    -moz-transform: scaleY(1);
+  }
+}
+@keyframes scale {
+  0% {
+    -webkit-transform: scaleY(0);
+    -moz-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+    -o-transform: scaleY(0);
+    transform: scaleY(0);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    -moz-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    -o-transform: scaleY(1);
+    transform: scaleY(1);
+  }
+}
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-1em);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
+@-moz-keyframes bounce {
+  0% {
+    -moz-transform: translateY(0);
+  }
+  50% {
+    -moz-transform: translateY(-1em);
+  }
+  100% {
+    -moz-transform: translateY(0);
+  }
+}
+@keyframes bounce {
+  0% {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-1em);
+    -moz-transform: translateY(-1em);
+    -ms-transform: translateY(-1em);
+    -o-transform: translateY(-1em);
+    transform: translateY(-1em);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes knock {
+  0% {
+    -webkit-transform: translateY(1em);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    opacity: 1;
+  }
+}
+@-moz-keyframes knock {
+  0% {
+    -moz-transform: translateY(1em);
+  }
+  100% {
+    -moz-transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes knock {
+  0% {
+    -webkit-transform: translateY(1em);
+    -moz-transform: translateY(1em);
+    -ms-transform: translateY(1em);
+    -o-transform: translateY(1em);
+    transform: translateY(1em);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+body, html {
+  font-size: 2.4em;
+  height: 100%;
+}
+body {
+  background: #b941ad;
+}
+h1, h5, h3 {
+  font-family: 'Fjalla One', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+}
+h1 {
+  -webkit-animation: bounce 0.2s ease 0.9s;
+  -moz-animation: bounce 0.2s ease 0.9s;
+  animation: bounce 0.2s ease 0.9s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  color: white;
+}
+h1 span {
+  -webkit-transform-origin: bottom center;
+  -moz-transform-origin: bottom center;
+  -ms-transform-origin: bottom center;
+  -o-transform-origin: bottom center;
+  transform-origin: bottom center;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+h1 span:nth-child(1) {
+  -webkit-animation: scale 0.1s linear;
+  -moz-animation: scale 0.1s linear;
+  animation: scale 0.1s linear;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+h1 span:nth-child(2) {
+  -webkit-animation: scale 0.2s linear 0.3s;
+  -moz-animation: scale 0.2s linear 0.3s;
+  animation: scale 0.2s linear 0.3s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  font-size: 2.0em;
+}
+h1 span:nth-child(3) {
+  -webkit-animation: scale 0.2s linear 0.4s;
+  -moz-animation: scale 0.2s linear 0.4s;
+  animation: scale 0.2s linear 0.4s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  font-size: 1.6em;
+}
+h5 {
+  -webkit-animation: knock 0.1s linear 0.8s;
+  -moz-animation: knock 0.1s linear 0.8s;
+  animation: knock 0.1s linear 0.8s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-transform: translateY(1em);
+  -moz-transform: translateY(1em);
+  -ms-transform: translateY(1em);
+  -o-transform: translateY(1em);
+  transform: translateY(1em);
+  opacity: 0;
+  color: #f8d545;
+  font-size: 1.55em;
+  margin-top: -.9em;
+}
+h3 {
+  -webkit-animation: knock 0.1s linear 0.8s;
+  -moz-animation: knock 0.1s linear 0.8s;
+  animation: knock 0.1s linear 0.8s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-transform: translateY(1em);
+  -moz-transform: translateY(1em);
+  -ms-transform: translateY(1em);
+  -o-transform: translateY(1em);
+  transform: translateY(1em);
+  opacity: 0;
+  color: #f8d545;
+  font-size: 1.55em;
+  margin-top: -.9em;
+}
+.butt {
+	color: red;
+	background-color: #222222;
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 20px;
+  font-weight: bold;
+	border:none;
+  outline: 0;
+}

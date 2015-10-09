@@ -1,24 +1,25 @@
 <center>	
-	<h1>HighFive! from <%= @lat_long.address %> </h1>
-
+<center>	
+	<h1>
+	<p> <span>HI</span> <span> FIVE! </p> </span> </h1>
+	<h3> <span><%= @lat_long.address %></span> </h3>
+	
 	<h3> <%= flash[:success].html_safe unless flash[:success].blank? %> </h3>
-
 	<%= form_tag("/high_five/lat_lng") do %>
 		<%= label_tag('zip', "Zipcode") %>
 		<%= text_field_tag('zip') %>
 		</br>
-		<input type="radio" name="number" value="5" checked="checked">5<br>
-		<input type="radio" name="number" value="10">10<br>
-		<input type="radio" name="number" value="20">20<br>
-
+		<input type="radio" name="number" value="5" checked="checked">5
+		<input type="radio" name="number" value="10">10
+		<input type="radio" name="number" value="20">20
+		<br>
 		<%= submit_tag "Submit"%>
-
 		<% x = [] %>
 		<% Zipcode.all.each {|e| x << e.zipcode} %>
 		<% x.uniq! %>
-		<button style="background-color:red" name="zip" type="submit" value="<%=x.sample%>">Random Zipcode</button>
-
+		<button class='butt'name="zip" type="submit" value="<%=x.sample%>"><h5>FEELING LUCKY?</h5></button>
 	<% end %>
+</center>
 </center>
 
 <% @insta.each do |thumbnail, insta_prof|%>
