@@ -23,12 +23,10 @@ class HighFiveController < ApplicationController
     session['init'] = true
 
     if !session['params'].nil?
-      # binding.pry
       @lat_long = Geolocation.new(session['params'][0])
       address = @lat_long.address
       latlong = @lat_long.lat_long << session['params'][1]
       @restaurant_yelper = Yelp.new(latlong).restaurant_yelp
-      @bar_yelper = Yelp.new(latlong).bar_yelp
       @insta = Insta.new(latlong).runner
       @twitter = Tweets.new(address,session['params'][1]).results
       render "/high_five/view"

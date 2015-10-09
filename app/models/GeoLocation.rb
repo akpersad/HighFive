@@ -15,7 +15,6 @@ class Geolocation
 	end
 
 	def get_address
-		
 		zip.to_region
 	end
 
