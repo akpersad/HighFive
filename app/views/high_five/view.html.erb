@@ -34,7 +34,6 @@
 
 		<% @insta.each do |thumbnail, insta_prof|%>
 			<a href="<%= insta_prof %>" target="_blank"><img src="<%= thumbnail %>" ></a>
-		<br>
 		<% end %>
 	
 	</div>
@@ -46,11 +45,11 @@
 			<% if stuff.to_s.match(/(yelp.com)/)%>
 					<% @url = stuff %>
 			<% elsif stuff.to_s.match(/(jpg)$/) %>
-				<a href="<%= @url%>" target="_blank"><img src="<%= stuff %>"><br></a>
+				<a href="<%= @url%>" target="_blank"><img src="<%= stuff %>"></a>
 			<% elsif stuff.to_s.match(/(png)$/) %>
-				<img src="<%= stuff %>"><br></a>
+				<img src="<%= stuff %>"></a>
 			<% else %>
-				<%= stuff %><br>
+				<%= stuff %>
 			<% end %>
 		<% end %>
 		<h3>Bars</h3>
@@ -71,7 +70,7 @@
 	<div class="twitter hidden">
 
 		<% @twitter.each do |tweet| %>
-			<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Have a High Five <a href="https://t.co/ce0TFlAcy5">https://t.co/ce0TFlAcy5</a></p>&mdash;  <a href="https://twitter.com/codeschool/status/<%=tweet.id%>">October 2, 2015</a></blockquote>
+			<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Have a High Five <a href="https://t.co/ce0TFlAcy5">https://t.co/ce0TFlAcy5</a></p>&mdash;  <a href="https://twitter.com/codeschool/status/<%=tweet.id%>">October 2, 2015</a></blockquote><br>
 			<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 		<%end%>
 
