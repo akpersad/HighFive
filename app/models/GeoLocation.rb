@@ -1,5 +1,3 @@
-require 'pry'
-require 'geocoder'
 require 'area'
 
 class Geolocation

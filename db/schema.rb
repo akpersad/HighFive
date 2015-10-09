@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151007134503) do
+ActiveRecord::Schema.define(version: 20151009012457) do
+
+  create_table "caches", force: :cascade do |t|
+    t.integer  "zipcode_id"
+    t.text     "twitter"
+    t.text     "insta"
+    t.text     "yelp"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "zipcodes", force: :cascade do |t|
     t.integer  "zipcode"

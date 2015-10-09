@@ -6,9 +6,11 @@ class HighFiveController < ApplicationController
 
 
     if Valid.new(params['zip']).is_zip?
+
       session['params'] = [params['zip'],params['number']]
       Zipcode.create(:zipcode => params['zip'],:number_to_return => params['number'])
       redirect_to("/high_five/view")
+      
     else
       flash[:success] = "<b>Please Enter Valid Zip</b>"
       render("/high_five/welcome")
