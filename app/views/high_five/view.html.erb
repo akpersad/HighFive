@@ -22,18 +22,20 @@
 </center>
 
 <ul class="tabs">
-  <li data-sec='insta'><img src="http://www.boosharticles.com/wp-content/uploads/2015/06/instagram-logo-vector-image.png" height="40" width="60"></li>
-  <li data-sec='yelp'><img src="http://www.pizzaboccalupo.com/images/YelpIcon.png" height="50" width="50"></li>
-  <li data-sec='twitter'><img src="http://vectorlogos.org/files/images/twitter-square-icon-2010.png" height="50" width="50"></li>
+  <li data-sec='insta' class="active"><img src="#" height="50" width="50"></li>
+  <li data-sec='yelp'><img src="../../public/yelp.png" height="50" width="50"></li>
+  <li data-sec='twitter'><img src="../../public/twitter.png" height="50" width="50"></li>
     <li class="bg"></li>
 </ul>
 
+<%= image_tag "twitter.png" %>
+
 
 <div class="view">
-	<div class="insta hidden">
+	<div class="insta hidden" class="tab active">
 
 		<% @insta.each do |thumbnail, insta_prof|%>
-			<a href="<%= insta_prof %>" target="_blank"><img src="<%= thumbnail %>" ></a>
+			<a href="<%= insta_prof %>" target="_blank"><img src="<%= thumbnail %>" border="1"></a>
 		<% end %>
 	
 	</div>
@@ -45,11 +47,11 @@
 			<% if stuff.to_s.match(/(yelp.com)/)%>
 					<% @url = stuff %>
 			<% elsif stuff.to_s.match(/(jpg)$/) %>
-				<a href="<%= @url%>" target="_blank"><img src="<%= stuff %>"></a>
+				<a href="<%= @url%>" target="_blank"><img src="<%= stuff %>"><br></a>
 			<% elsif stuff.to_s.match(/(png)$/) %>
-				<img src="<%= stuff %>"></a>
+				<img src="<%= stuff %>"><br></a>
 			<% else %>
-				<%= stuff %>
+				<%= stuff %><br>
 			<% end %>
 		<% end %>
 		<h3>Bars</h3>

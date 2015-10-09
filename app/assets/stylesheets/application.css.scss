@@ -108,6 +108,10 @@ li a:hover {
   overflow: hidden;
 }
 
+.tab.active {
+	display:block;
+}
+
 .tabs li:first-child a {
   background: #8F4700 !important;
 }
