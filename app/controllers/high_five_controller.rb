@@ -1,5 +1,3 @@
-Dir[File.dirname(__FILE__) + '../models/*.rb'].each {|file| require file }
-
 class HighFiveController < ApplicationController
   def welcome
   end
