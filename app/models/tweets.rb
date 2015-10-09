@@ -10,12 +10,11 @@ class Tweets
 	end
 
 	TWITTER = Twitter::REST::Client.new do |config|
-		  config.consumer_key        = "suECsPzsMM7V3GoNnIaXXE4hY"
-		  config.consumer_secret     = "NoA8RS9o8kpdZiIwtVtQi2RHJIv6idKrTNy8Yv7Wp0H76CPa2S"
-		  config.access_token        = "36609245-osCJiHheIlZ6js2JVjQU5IyeXjUmFuDmpkglxpPbB"
-		  config.access_token_secret = "RljESz8ssq5owjeveAITWmRNEhkdwDSycyKEyqljcqZkY"
-		end
-
+		  config.consumer_key        = ENV["consumer_key"]
+		  config.consumer_secret     = ENV["consumer_secret"]
+		  config.access_token        = ENV["access_token"]
+		  config.access_token_secret = ENV["access_token_secret"]
+	end
 
 	def search_results
 		results = Array.new

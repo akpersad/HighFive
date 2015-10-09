@@ -9,11 +9,11 @@ class Yelp
 	end
 
 	def get_values
-		consumer_key = 'h-PhZkg6N-RV08KQAoHbkQ'
-		consumer_secret = '6NIvfs6CW2KPTxjRzjna42LkYBc'
-		token = 'M9_KEOzf5dG3i-GDO0WDGSqbeQ92aMwo'
-		token_secret = 'aQoGM4JPP-PgQj6k-33tgs99eIU'
-
+		consumer_key = ENV["yelp_c_k"]
+		consumer_secret = ENV["yelp_c_s"]
+		token = ENV["yelp_t"]
+		token_secret = ENV["yelp_t_s"]
+	
 		api_host = 'api.yelp.com'
 
 		@food_path = "/v2/search?term=restaurants&ll=#{@array[0]},#{@array[1]}&limit=#{@array[2]}"

@@ -37,6 +37,8 @@ gem 'require_all'
 
 gem 'area'
 
+gem "figaro"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

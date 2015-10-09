@@ -12,7 +12,7 @@ class Insta
 	def get_values	
 		latitude = lat_long[0].to_s
 		longitude = lat_long[1].to_s
-		access = "328328693.820ad4a.e7188df1eb914a3d825d3055fee849bf"
+		access = ENV["insta_access"]
 		url = "https://api.instagram.com/v1/media/search?lat=#{latitude}&lng=#{longitude}&access_token=#{access}"
 		url
 	end
