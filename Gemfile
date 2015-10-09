@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 gem 'instagram'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -39,6 +40,7 @@ gem 'area'
 
 gem "figaro"
 
+gem 'rails-assets-bootstrap'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
