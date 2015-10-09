@@ -37,4 +37,8 @@ class Yelp
 		end
 		restaurant
 	end
+
+	def runner
+		restaurant ||= restaurant_yelp
+	end
 end

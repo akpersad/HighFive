@@ -7,7 +7,7 @@ class HighFiveController < ApplicationController
         @lat_long = Geolocation.new(params['zip'])
         address = @lat_long.address
         latlong = @lat_long.lat_long << params['number']
-        @restaurant_yelper = Yelp.new(latlong).restaurant_yelp
+        @restaurant_yelper = Yelp.new(latlong).runner
         @insta = Insta.new(latlong).runner
         @twitter = Tweets.new(address,params['number']).results
         render "/high_five/view"
