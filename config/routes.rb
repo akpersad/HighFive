@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get 'high_five/favorite'
 
+  get 'high_five/results'
+
   post 'high_five/results'
 
   # The priority is based upon order of creation: first created -> highest priority.

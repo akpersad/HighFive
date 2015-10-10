@@ -15,6 +15,7 @@ class Insta
 		access = ENV["insta_access"]
 		url = "https://api.instagram.com/v1/media/search?lat=#{latitude}&lng=#{longitude}&access_token=#{access}"
 		url
+		
 	end
 
 	def url

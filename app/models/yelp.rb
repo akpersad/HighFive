@@ -36,6 +36,7 @@ class Yelp
 			i += 1
 		end
 		restaurant
+
 	end
 
 	def runner
