@@ -1,8 +1,11 @@
-<div id="blackBar"></div>
+<div id="top-bar"></div>
 <center>	
+	<div id="words">
 	<h1>
-	<p> <span>HI</span> <span> FIVE! </p> </span> </h1>
+		<p> <span>HI</span> <span> FIVE! </p> </span>
+	</h1>
 	<h3> <span><%= @lat_long.address %></span> </h3>
+	</div>
 	
 	<h3> <%= flash[:success].html_safe unless flash[:success].blank? %> </h3>
 	<%= form_tag("/high_five/lat_lng") do %>
@@ -18,20 +21,18 @@
 		<% x = [] %>
 		<% Zipcode.all.each {|e| x << e.zipcode} %>
 		<% x.uniq! %>
-		<button class='butt'name="zip" type="submit" value="<%=x.sample%>"><h5>FEELING LUCKY?</h5></button>
+		<button class='butt'name="zip" type="submit" value="<%=x.sample%>"><h5>Random Zipode</h5></button>
 	<% end %>
 </center>
 
 <ul class="tabs">
-  <li data-sec='insta' class="active"><img src="http://i.imgur.com/RVX1MKd.png" height="50" width="50"></li>
-  <li data-sec='yelp'><img src="http://i.imgur.com/u7Fcuhf.png" height="50" width="50"></li>
-  <li data-sec='twitter'><img src="http://i.imgur.com/t5zbmb6.png" height="50" width="50"></li>
-    <li class="bg"></li>
+  <li data-sec='insta'><img src="http://i.imgur.com/RVX1MKd.png" height="50" width="50" id="insta"></li>
+  <li data-sec='yelp'><img src="http://i.imgur.com/u7Fcuhf.png" height="50" width="50" id="yelp"></li>
+  <li data-sec='twitter'><img src="http://i.imgur.com/t5zbmb6.png" height="50" width="50" id="twitter"></li>
 </ul>
 
 <div class="view">
-<div class="insta hidden" class="tab active"
-
+<div class="insta hidden">
 <% @insta.each do |thumbnail, insta_prof|%>
 	<a href="<%= insta_prof %>" target="_blank"><img src="<%= thumbnail %>" border="1" ></a>
 <% end %>
@@ -69,5 +70,41 @@
 $('.tabs li').click(function(){
     var c = $(this).attr('data-sec');
     $('.view .' + c).removeClass('hidden').siblings().addClass('hidden');
+});
+</script>
+
+<script>
+$('#insta').hover(function() {
+  $('#top-bar').toggleClass("insta_color");
+});
+</script>
+
+<script>
+$('#insta').hover(function() {
+  $('#words').toggleClass("insta_color2");
+});
+</script>
+
+<script>
+$('#yelp').hover(function() {
+  $('#top-bar').toggleClass("yelp_color");
+});
+</script>
+
+<script>
+$('#yelp').hover(function() {
+  $('#words').toggleClass("yelp_color2");
+});
+</script>
+
+<script>
+$('#twitter').hover(function() {
+  $('#top-bar').toggleClass("twitter_color");
+});
+</script>
+
+<script>
+$('#twitter').hover(function() {
+  $('#words').toggleClass("twitter_color2");
 });
 </script>
