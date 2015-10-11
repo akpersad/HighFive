@@ -27,19 +27,21 @@
 	<a href="<%= insta_prof %>" target="_blank"><img src="<%= thumbnail %>" ></a>
 <br>
 <% end %>
+
+
+
 <br>
 <h3>Restaurants</h3>
 <% @restaurant_yelper.each do |stuff| %>
-	<% if stuff.to_s.match(/(yelp.com)/)%>
-			<% @url = stuff %>
-	<% elsif stuff.to_s.match(/(jpg)$/) %>
-		<a href="<%= @url%>" target="_blank"><img src="<%= stuff %>"><br></a>
-	<% elsif stuff.to_s.match(/(png)$/) %>
-		<img src="<%= stuff %>"><br></a>
-	<% else %>
-		<%= stuff %><br>
+	<% stuff.each do |result| %>
+		<br> <%= result %> </br>
 	<% end %>
 <% end %>
+
+
+
+
+
 
 <% @twitter.each do |tweet| %>
 	

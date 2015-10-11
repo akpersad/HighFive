@@ -23,20 +23,21 @@ class Yelp
 	end
 
 	def restaurant_yelp
+
 		restaurant = [] 
 		get_values
 		i = 0
 		while i < @array[2].to_i
-			restaurant.push(
+			restaurant << [
 				@restaurant_data["businesses"][i]["name"], 
 				@restaurant_data["businesses"][i]["rating"],
-				@restaurant_data["businesses"][i]["rating_img_url_small"],
+				# add rating system png file
+				# @restaurant_data["businesses"][i]["rating_img_url_small"],
 				@restaurant_data["businesses"][i]["url"],
-				@restaurant_data["businesses"][i]["image_url"])
+				@restaurant_data["businesses"][i]["image_url"] ]
 			i += 1
 		end
 		restaurant
-
 	end
 
 	def runner
