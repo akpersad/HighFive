@@ -10,7 +10,6 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
-
  *= require_self
  *= require theme
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.eot"
@@ -18,7 +17,6 @@
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.ttf"
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.svg"
  */
-@import "bootstrap";
 /* Some Style from the Bootstrap Default Theme */
 body {
   padding-top: 70px;
@@ -249,11 +247,69 @@ h3 {
   margin-top: -.9em;
 }
 .butt {
-	color: red;
-	background-color: #222222;
-	font-family: 'Fjalla One', sans-serif;
-	font-size: 20px;
+  color: red;
+  background-color: #222222;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 20px;
   font-weight: bold;
-	border:none;
+  border:none;
   outline: 0;
+}
+
+.tabs li {
+  display: inline-block;
+  padding: 0px;
+  text-align: center;
+  width: 33%;
+}
+.hidden {
+  display: none;
+}
+.view {
+  height: 1000px;
+  text-align: center;
+}
+.view .insta > * {
+  display: inline-block;
+}
+.view .insta {
+  width: 100%;
+
+}
+
+.view > div {
+  display: inline-block;
+  width: 600px
+}
+
+#top-bar {
+  background: gray;
+  height:60px;
+  position: absolute;
+  width: 100%;
+  top: 0
+}
+
+.insta_color {
+  background: #895A4D !important;
+}
+
+.insta_color2 {
+  color: #895A4D !important;
+}
+
+.yelp_color {
+  background: #C71300 !important;
+}
+
+.yelp_color2 {
+  color: #C71300 !important;
+}
+
+.twitter_color {
+  background: #00ACED !important;
+}
+
+.twitter_color2 {
+  color: #00ACED !important;
 }
