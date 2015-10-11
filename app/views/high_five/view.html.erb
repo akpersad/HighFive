@@ -1,8 +1,11 @@
+<div id="top-bar"></div>
 <center>	
-<center>	
+	<div id="words">
 	<h1>
-	<p> <span>HI</span> <span> FIVE! </p> </span> </h1>
+		<p> <span>HI</span> <span> FIVE! </p> </span>
+	</h1>
 	<h3> <span><%= @lat_long.address %></span> </h3>
+	</div>
 	
 	<h3> <%= flash[:success].html_safe unless flash[:success].blank? %> </h3>
 	<%= form_tag("/high_five/results") do %>
@@ -18,16 +21,25 @@
 		<% x = [] %>
 		<% Zipcode.all.each {|e| x << e.zipcode} %>
 		<% x.uniq! %>
-		<button class='butt'name="zip" type="submit" value="<%=x.sample%>"><h5>FEELING LUCKY?</h5></button>
+		<button class='butt'name="zip" type="submit" value="<%=x.sample%>"><h5>Random Zipode</h5></button>
 	<% end %>
 </center>
-</center>
 
+<ul class="tabs">
+  <li data-sec='insta'><img src="http://i.imgur.com/RVX1MKd.png" height="50" width="50" id="insta"></li>
+  <li data-sec='twitter'><img src="http://i.imgur.com/t5zbmb6.png" height="50" width="50" id="twitter"></li>
+  <li data-sec='yelp'><img src="http://i.imgur.com/u7Fcuhf.png" height="50" width="50" id="yelp"></li>
+</ul>
+
+<div class="view">
+<div class="insta">
 <% @insta.each do |thumbnail, insta_prof|%>
-	<a href="<%= insta_prof %>" target="_blank"><img src="<%= thumbnail %>" ></a>
-<br>
+	<a href="<%= insta_prof %>" target="_blank"><img src="<%= thumbnail %>" border="1" ></a>
 <% end %>
-<br>
+</div>
+
+<div class="yelp hidden">
+
 <h3>Restaurants</h3>
 <% @restaurant_yelper.each do |stuff| %>
 	<% if stuff.to_s.match(/(yelp.com)/)%>
@@ -41,10 +53,58 @@
 	<% end %>
 <% end %>
 
+</div>
+
+<div class="twitter hidden">
+
 <% @twitter.each do |tweet| %>
 	
 	<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Have a High Five <a href="https://t.co/ce0TFlAcy5">https://t.co/ce0TFlAcy5</a></p>&mdash;  <a href="https://twitter.com/codeschool/status/<%=tweet.id%>">October 2, 2015</a></blockquote>
 	<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
 <%end%>
+
+</div>
+</div>
+
+<script>
+$('.tabs li').click(function(){
+    var c = $(this).attr('data-sec');
+    $('.view .' + c).removeClass('hidden').siblings().addClass('hidden');
+});
+</script>
+
+<script>
+$('#insta').hover(function() {
+  $('#top-bar').toggleClass("insta_color");
+});
+</script>
+
+<script>
+$('#insta').hover(function() {
+  $('#words').toggleClass("insta_color2");
+});
+</script>
+
+<script>
+$('#yelp').hover(function() {
+  $('#top-bar').toggleClass("yelp_color");
+});
+</script>
+
+<script>
+$('#yelp').hover(function() {
+  $('#words').toggleClass("yelp_color2");
+});
+</script>
+
+<script>
+$('#twitter').hover(function() {
+  $('#top-bar').toggleClass("twitter_color");
+});
+</script>
+
+<script>
+$('#twitter').hover(function() {
+  $('#words').toggleClass("twitter_color2");
+});
+</script>
