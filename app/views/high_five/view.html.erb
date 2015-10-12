@@ -44,17 +44,28 @@
 
 <div class="yelp hidden">
 
-<h3>Restaurants</h3>
 <% @restaurant_yelper.each do |stuff| %>
-	<% if stuff.to_s.match(/(yelp.com)/)%>
-			<% @url = stuff %>
-	<% elsif stuff.to_s.match(/(jpg)$/) %>
-		<a href="<%= @url%>" target="_blank"><img src="<%= stuff %>"><br></a>
-	<% elsif stuff.to_s.match(/(png)$/) %>
-		<img src="<%= stuff %>"><br></a>
-	<% else %>
-		<%= stuff %><br>
-	<% end %>
+	<div class ='yelpz'> 
+		<h2 class='yelptitle'> <%= stuff[0]%>  </h2>
+		<h4 class='cata'> <%= stuff[1]%> </h4>
+
+		<div class='yelpimage' >
+			<a href="<%= stuff[3] %>" target="_blank"> 
+			<img src="<%= stuff[4] %>" height="150" width="150"> </a>
+		</div>  
+
+		<div class'snip'> 
+			<p id='black'> 
+				<%= stuff.last %>
+			</p>
+		</div>
+
+		<br/>
+		<img src="<%= stuff[2][0] %>" alt="Blake" height="100" width="420">
+		</br>
+	</div>
+
+	<br></br>
 <% end %>
 
 </div>
