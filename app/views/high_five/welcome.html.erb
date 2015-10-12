@@ -10,7 +10,7 @@
 		
 		<br>
 		<br>
-		<%= label_tag('zip', "") %>
+		<%= label_tag('zip', "Enter Zipcode") %>
 		<%= text_field_tag('zip') %>
 		<p>
 			Show:
@@ -22,7 +22,7 @@
 		<% x = [] %>
 		<% Zipcode.all.each {|e| x << e.zipcode} %>
 		<% x.uniq! %>
-		<button class='butt'name="zip" type="submit" value="<%=x.sample%>"><h5>FEELING LUCKY?</h5></button>
+		<button class='butt'name="zip" type="submit" value="<%=x.sample%>"><h5>RANDOM ZIPCODE</h5></button>
 	<% end %>
 </center>
 
