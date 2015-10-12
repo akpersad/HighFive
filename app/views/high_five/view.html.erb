@@ -1,15 +1,18 @@
+<%= favicon_link_tag 'http://sstatic.net/stackoverflow/img/favicon.ico' %>
 <div id="top-bar"></div>
 <center>	
 	<div id="words">
+	<div id="words2">
 	<h1>
 		<p> <span>HI</span> <span> FIVE! </p> </span>
 	</h1>
 	<h3> <span><%= @lat_long.address %></span> </h3>
 	</div>
+	</div>
 	
 	<h3> <%= flash[:success].html_safe unless flash[:success].blank? %> </h3>
 	<%= form_tag("/high_five/results") do %>
-		<%= label_tag('zip', "Zipcode") %>
+		<%= label_tag('zip', "Enter Zipcode") %>
 		<%= text_field_tag('zip') %>
 		<p>
 			Show:
@@ -17,12 +20,13 @@
 			<input type="radio" name="number" value="10">10
 			<input type="radio" name="number" value="20">20
 		</p>
-		<%= submit_tag "Submit"%>
+		<%= submit_tag "SUBMIT"%>
 		<% x = [] %>
 		<% Zipcode.all.each {|e| x << e.zipcode} %>
 		<% x.uniq! %>
-		<button class='butt'name="zip" type="submit" value="<%=x.sample%>"><h5>Random Zipode</h5></button>
+		<button class='butt'name="zip" type="submit" value="<%=x.sample%>"><h5>Random Zipcode</h5></button>
 	<% end %>
+	<br/>
 </center>
 
 <ul class="tabs">
@@ -43,40 +47,27 @@
 
 
 <% @restaurant_yelper.each do |stuff| %>
-	
+	<div class ='yelpz'> 
+		<h2 class='yelptitle'> <%= stuff[0]%>  </h2>
+		<h4 class='cata'> <%= stuff[1]%> </h4>
 
+		<div class='yelpimage' >
+			<a href="<%= stuff[3] %>" target="_blank"> 
+			<img src="<%= stuff[4] %>" height="150" width="150"> </a>
+		</div>  
 
-			<div class ='yelpz'> 
+		<div class'snip'> 
+			<p id='black'> 
+				<%= stuff.last %>
+			</p>
+		</div>
 
-				
+		<br/>
+		<img src="<%= stuff[2][0] %>" alt="Blake" height="100" width="420">
+		</br>
+	</div>
 
-				<h2 class='yelptitle'> <%= stuff[0]%>  </h2>
-				<h4 class='cata'> <%= stuff[1]%> </h4>
-
-				
-
-				
-
-				<div class='yelpimage' > <a href="<%= stuff[3] %>" target="_blank"> <img src="<%= stuff[4] %>" height="150" width="150" > </a> </div>  
-
-				<div class'snip'> <p id='black'> <%= stuff.last %> </p> </div>
-
-				<br></br>
-
-				<br>
-				</br>
-
-
-				<img src="<%= stuff[2][0] %>" alt="Blake" height="100" width="420">
-
-
-
-				</br>
-			</div>
-
-		<br></br>
-
-		
+	<br></br>
 <% end %>
 
 
@@ -136,3 +127,4 @@ $('#twitter').hover(function() {
   $('#words').toggleClass("twitter_color2");
 });
 </script>
+</div>

@@ -46,7 +46,6 @@ class Yelp
 				rate << 'http://i.imgur.com/Jj97Xtr.png'
 			end
 		end
-		
 		rate
 	end
 
@@ -59,20 +58,12 @@ class Yelp
 				@restaurant_data["businesses"][i]["name"],
 				@restaurant_data['businesses'][i]['categories'].flatten[0],
 				rating(@restaurant_data["businesses"][i]["rating"]),
-				# @restaurant_data["businesses"][i]["rating"],
-				# add rating system png file
-				# @restaurant_data["businesses"][i]["rating_img_url_small"],
 				@restaurant_data["businesses"][i]["url"],
 				@restaurant_data["businesses"][i]["image_url"],
 				@restaurant_data["businesses"][i]['snippet_text'] ]
-
 			i += 1
 		end
-		# binding.pry
-		
 		restaurant
-
-
 	end
 
 	def runner

@@ -33,9 +33,6 @@ body {
   margin: 5px 0;
 }
 
-
-
-
 @-webkit-keyframes scale {
   0% {
     -webkit-transform: scaleY(0);
@@ -149,11 +146,12 @@ body {
   }
 }
 body, html {
-  font-size: 2.4em;
+  font-size: 20px;
+  font-color: orange;
   height: 100%;
 }
 body {
-  background: #b941ad;
+  background-image: url("http://images.123hdwallpapers.com/20150802/abstract-triangle-simple-background-1920x1080.png");;
 }
 h1, h5, h3 {
   font-family: 'Fjalla One', sans-serif;
@@ -167,7 +165,7 @@ h1 {
   -webkit-animation-fill-mode: forwards;
   -moz-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
-  color: white;
+  color: black;
 }
 h1 span {
   -webkit-transform-origin: bottom center;
@@ -227,7 +225,7 @@ h5 {
   opacity: 0;
   color: #f8d545;
   font-size: 1.55em;
-  margin-top: -.9em;
+  margin-top: 2.5px;
 }
 h3 {
   -webkit-animation: knock 0.1s linear 0.8s;
@@ -247,8 +245,8 @@ h3 {
   margin-top: -.9em;
 }
 .butt {
-  color: red;
-  background-color: #222222;
+  color: #464548;
+  background-color: #C0C0C0;
   font-family: 'Fjalla One', sans-serif;
   font-size: 20px;
   font-weight: bold;
@@ -283,11 +281,16 @@ h3 {
 }
 
 #top-bar {
-  background: gray;
-  height:60px;
+  background: #C0C0C0;
+  height:90px;
   position: absolute;
   width: 100%;
   top: 0
+}
+
+#background{
+  background-image: url("http://images.123hdwallpapers.com/20150802/abstract-triangle-simple-background-1920x1080.png");
+  height: 100%;
 }
 
 .insta_color {
@@ -314,10 +317,13 @@ h3 {
   color: #00ACED !important;
 }
 
+#korean {
+  color:#f7f7f7;
+}
 
 .yelpz {
   background: #D5D5D5;
-  boarder: none;
+  border: none;
   width: 80%;
   margin: 0 auto;
    -webkit-border-radius: 10px;
