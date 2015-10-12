@@ -12,7 +12,7 @@ class HighFiveController < ApplicationController
         @insta = Insta.new(latlong).runner
         @twitter = Tweets.new(address,params['number']).results
         render "/high_five/view"
-        Zipcode.create(:zipcode => params['zip'] )
+        Zipcode.create(:zipcode => params['zip'].to_i )
     else
       flash[:success] = "<b>Please Enter Valid Zip</b>"
       redirect_to ("/")

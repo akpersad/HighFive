@@ -22,22 +22,57 @@ class Yelp
 		@restaurant_data = JSON.parse(access_token.get(@food_path).body)
 	end
 
-	def restaurant_yelp
+	def rating(rating)
+		rate= Array.new
+		
+		if rating.class == Float
+			if rating == 1.0
+				rate << 'http://i.imgur.com/UKYzW9N.png'
+			elsif rating == 2.0
+				rate << 'http://i.imgur.com/YbczZb3.png'
+			elsif rating == 3.0
+				rate << 'http://i.imgur.com/AM1zmkP.png'
+			elsif rating == 4.0
+				rate << 'http://i.imgur.com/qiQGzep.png'
+			elsif rating == 5.0
+				rate << 'http://i.imgur.com/wuVkrMw.png'
+			elsif rating == 1.5
+				rate << 'http://i.imgur.com/8QBdPCJ.png'
+			elsif rating == 2.5
+				rate << 'http://i.imgur.com/cWFPXld.png'
+			elsif rating == 3.5
+				rate << 'http://i.imgur.com/yeFN6mt.png'
+			elsif rating == 4.5
+				rate << 'http://i.imgur.com/Jj97Xtr.png'
+			end
+		end
+		
+		rate
+	end
 
+	def restaurant_yelp
 		restaurant = [] 
 		get_values
 		i = 0
 		while i < @array[2].to_i
 			restaurant << [
-				@restaurant_data["businesses"][i]["name"], 
-				@restaurant_data["businesses"][i]["rating"],
+				@restaurant_data["businesses"][i]["name"],
+				@restaurant_data['businesses'][i]['categories'].flatten[0],
+				rating(@restaurant_data["businesses"][i]["rating"]),
+				# @restaurant_data["businesses"][i]["rating"],
 				# add rating system png file
 				# @restaurant_data["businesses"][i]["rating_img_url_small"],
 				@restaurant_data["businesses"][i]["url"],
-				@restaurant_data["businesses"][i]["image_url"] ]
+				@restaurant_data["businesses"][i]["image_url"],
+				@restaurant_data["businesses"][i]['snippet_text'] ]
+
 			i += 1
 		end
+		# binding.pry
+		
 		restaurant
+
+
 	end
 
 	def runner
